@@ -55,6 +55,8 @@ var generateCmd = &cobra.Command{
 		err := impl.GenerateWallet(walletName, passphrase)
 		if err == nil {
 			fmt.Println("Wallet generated:", walletName)
+		} else {
+			fmt.Println("Error:", err)
 		}
 	},
 	TraverseChildren: true,

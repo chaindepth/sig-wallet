@@ -5,7 +5,9 @@
 package cli
 
 import (
+	"errors"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -13,6 +15,7 @@ import (
 var (
 	walletName string
 	passphrase string
+	cfgPath    string
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -53,4 +56,26 @@ func init() {
 	// rootCmd.Flags().StringVarP(&walletName, "wallet-name", "n", ".kms", "Wallet name, default is `.kms`")
 	rootCmd.PersistentFlags().StringVarP(&walletName, "wallet-name", "n", "kms", "Wallet name")
 	rootCmd.PersistentFlags().StringVarP(&passphrase, "passphrase", "p", "", "Wallet passphrase, default is empty.")
+	rootCmd.PersistentFlags().StringVarP(&cfgPath, "config", "c", "~/.hdkms", "Local config file path")
+
+	initConfigFilePath()
+}
+
+// Config file directory structure
+func initConfigFilePath() {
+	if strings.HasPrefix(cfgPath, "~/") {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			panic(err)
+		}
+
+		cfgPath = strings.Replace(cfgPath, "~", home, 1)
+	}
+
+	if _, err := os.Stat(cfgPath); errors.Is(err, os.ErrNotExist) {
+		err := os.MkdirAll(cfgPath, os.ModePerm)
+		if err != nil {
+			panic(err)
+		}
+	}
 }

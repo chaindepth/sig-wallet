@@ -18,6 +18,10 @@ var (
 
 var wallets = map[string]*Wallet{}
 
+func loadWallets(path string) {
+
+}
+
 // Wallet is the underlying wallet struct.
 type Wallet struct {
 	mnemonic   string
@@ -50,7 +54,9 @@ func newWallet(seed []byte) (*Wallet, error) {
 func GenerateWallet(walletName string, passphrase string) error {
 	log("Loading available wallets...")
 	// TODO 启动 cli 程序时需要加载存储中的 wallets
-	// keystore path: ~/.hdkms/
+	// keystore path: ~/.hdkms
+
+	wallets[walletName] = &Wallet{}
 
 	if _, ok := wallets[walletName]; ok {
 		return WalletExistsErr
