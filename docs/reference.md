@@ -3,6 +3,10 @@
 - [go-ethereum-hdwallet](https://github.com/miguelmota/go-ethereum-hdwallet) - Ethereum HD Wallet derivations in Go (golang)
 - [go-hdwallet](https://github.com/foxnut/go-hdwallet) - A multi-cryptocurrency HD wallet implementated by Golang.
 
+TODO
+
+- [How To Create A Bitcoin HD Wallet with Golang and gRPC](https://hackernoon.com/how-to-create-a-bitcoin-hd-wallet-with-golang-and-grpc-part-l-u51d3wwm)
+
 ## Blockchain
 
 - [ERC-1066: Status Codes](https://eips.ethereum.org/EIPS/eip-1066)
