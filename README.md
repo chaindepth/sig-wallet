@@ -39,4 +39,4 @@ shaohan.n shaohan.niu.share@gmail.com
 
 ## Licence
 
-`hdkms` is licensed under the MIT. See [LICENSE]() for the full license text.
+`hdkms` is licensed under the MIT. See [LICENSE](LICENSE) for the full license text.
