@@ -5,6 +5,8 @@
 `hdkms` 是一个基于分层确定性钱包开发的密钥管理方案，提供简单易用的命令行工具，并且支持多链，包括但不限于 Bitcoin、Ethereum、Binance Smart 
 Chain、Solana 等。
 
+参考文档：[HD Wallet](https://shniu.github.io/blockchain/wallet/index.html)
+
 ## Features
 
 - [ ] Wallet management
