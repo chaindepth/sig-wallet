@@ -96,7 +96,7 @@ func main() {
 
 	fmt.Printf(rawTxHex) // f86...772
 
-	//err = client.SendTransaction(context.Background(), signedTx)
+	err = client.SendTransaction(context.Background(), signedTx)
 	//if err != nil {
 	//	log.Fatal(err)
 	//}
